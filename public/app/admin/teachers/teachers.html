@@ -1,0 +1,131 @@
+<!-- Features-->
+<div class="myForm" ng-controller="teacherEditController as tevm">
+    <div class="container">
+        <!-- Features Row-->
+        <div class="features row">
+            <h3>Student Registration</h3>
+            <form>
+                <div class="form-group col-md-4">
+                    <label for="exampleInputName2">First Name</label>
+                    <input type="text" ng-model="tevm.teacher.first_name" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleInputName2">Middle Name</label>
+                    <input type="text" ng-model="tevm.teacher.middle_name" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleInputName2">Last Name</label>
+                    <input type="text" ng-model="tevm.teacher.last_name" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+
+
+
+                <div class="form-group col-md-2">
+                    <label for="exampleInputName2">Gender</label>
+                    <br />
+                    <input type="radio" ng-model="tevm.teacher.gender" name="inlineRadioOptions" id="inlineRadio1" value="1"> Male
+
+
+                    <input type="radio" ng-model="tevm.teacher.gender" name="inlineRadioOptions" id="inlineRadio2" value="0"> Female
+
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="exampleInputName2">Blood Group</label>
+                    <select class="form-control" ng-model="tevm.teacher.blood_group">
+                        <option value="">Select BG</option>
+                        <option value="A+" ng-selected="{{tevm.teacher.blood_group == 'A+'}}">A+</option>
+                        <option value="A-" ng-selected="{{tevm.teacher.blood_group == 'A-'}}">A-</option>
+                        <option value="B+" ng-selected="{{tevm.teacher.blood_group == 'B+'}}">B+</option>
+                        <option value="B-" ng-selected="{{tevm.teacher.blood_group == 'B-'}}">B-</option>
+                        <option value="O+" ng-selected="{{tevm.teacher.blood_group == 'O+'}}">O+</option>
+                        <option value="O-" ng-selected="{{tevm.teacher.blood_group == 'O-'}}">O-</option>
+                        <option value="AB+" ng-selected="{{tevm.teacher.blood_group == 'AB+'}}">AB+</option>
+                        <option value="AB-" ng-selected="{{tevm.teacher.blood_group == 'AB-'}}">AB-</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleInputName2">Date of Birth</label>
+                    <input type="text" ng-model="tevm.teacher.date_of_birth" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleInputName2">Employee Code</label>
+                    <input type="text" ng-model="tevm.teacher.employee_code" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Scool Code </label>
+                    <input type="text" ng-model="tevm.teacher.ORG_CODE" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Class</label>
+                    <input type="text" ng-model="tevm.teacher.class" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Section</label>
+                    <input type="text" ng-model="tevm.teacher.section" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Teacher Image</label>
+                    <img src="/uploads/{{tevm.teacher.image_path}}" width="80" height="70" alt="Parents Images">
+                    <input type="file" multiple ng-files="sevm.getTheFiles($files)" />
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-seprator">
+                    <label>Adress Information</label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="exampleInputName2">Address Line 1</label>
+                    <input type="text" ng-model="tevm.teacher.address_1" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="exampleInputName2">Address Line 2</label>
+                    <input type="text" ng-model="tevm.teacher.address_2" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">City </label>
+                    <input type="text" ng-model="tevm.teacher.address_city" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Pincode</label>
+                    <input type="text" ng-model="tevm.teacher.address_zipcode" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">State</label>
+                    <input type="text" ng-model="tevm.teacher.address_state" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Country</label>
+                    <input type="text" ng-model="tevm.teacher.address_country" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-seprator">
+                    <label>Contact Information</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Phone Number </label>
+                    <input type="text" ng-model="tevm.teacher.phone_number" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Emergency Contect Number</label>
+                    <input type="text" ng-model="tevm.teacher.emergency_contact_number" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Email ID</label>
+                    <input type="email" ng-model="tevm.teacher.work_email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                </div>
+                <div class="clearfix"></div>
+					  <div class="form-seprator">
+						<label>Qualifications</label>
+					  </div>
+					  <div class="form-group col-md-3">
+						<label for="exampleInputName2">Qualification Name </label>
+						<input type="text" ng-model="tevm.teach.qualification" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+					  </div>
+					  <div class="clearfix"></div>
+
+
+                <button type="submit" ng-click="tevm.submit()" class="btn btn-default">Submit Form</button>
+            </form>
+        </div>
+    </div>
+</div>

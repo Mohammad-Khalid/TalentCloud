@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script src="public/libs/angular/angular.min.js"></script>
+  
+</head>
+<script>
+	var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope,$http) {
+   $scope.submit= function(){
+    //$http.defaults.headers.post["Content-Type"] = "application/json";
+   console.log($scope.user);
+     $http({
+  method  : 'POST',
+  url     : 'http://localhost:3000/login',
+    // set the headers so angular passing info as form data (not request payload)
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
+  data    :  {
+              username:'$scope.rEmail',
+              password:'$scope.rPassword'
+            },
+  transformRequest: function(obj) {
+      var str = [];
+      for(var p in obj){
+          str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+      }
+      return str.join('&');
+  }
+
+ }).success(function (data, status, headers, config) {
+                $scope.users = data.users; // assign  $scope.persons here as promise is resolved here 
+            }).error(function (data, status, headers, config) {
+                $scope.status = status + ' ' + headers;
+            });
+	 }
+});
+</script>
+<body ng-app="myApp">    
+  <div ng-controller="myCtrl">
+    <form>
+      Author:
+      <input type="text" ng-model="user.author">
+      <br>
+      <br> Title:
+      <input type="text" ng-model="user.title">
+      <br>
+      <br> Body:
+      <input type="author" ng-model="user.body">
+      <br>
+      <br>
+      <input type="submit" value="Submit" ng-click="submit()">
+    </form>
+  </div>
+  </body>
+ </html>

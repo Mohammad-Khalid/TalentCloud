@@ -1,0 +1,42 @@
+
+           <div class="jumbotron page-jumbotron no-bg ng-scope">
+                <div class="bottom-bar">
+                    <div class="container-fluid">
+                        <h1><i class="fa fa-user"></i>File Upload</h1>
+                    </div>
+                </div>
+            </div>            
+<!-- Details Section-->
+<div class="details-content" style="padding-bottom:100px;margin-top:30px">
+    <!-- Feedback-->
+    <div class="row">
+        <!-- Contact-->
+        <div class="col-md-6 col-md-offset-3 contact-form-wrapper" ng-controller="fileUploadCtrl as fuvm">
+            <!-- Contact Form-->
+
+            <form class="contact-form">
+				
+                <input type="file" id="file1" name="file" multiple ng-files="fuvm.getTheFiles($files)" />
+				<br />
+                <input type="button" class="btn btn-primary"ng-click="fuvm.uploadFiles()" value="Upload" />
+
+                <div ng-show=fuvm.uploadResponse>
+                    <h3>  
+                  Status:  {{fuvm.uploadResponse.status}} 
+                  </h3>
+                    <p class="bg-success">Success Records: {{fuvm.uploadResponse.inserted_rec}}</p>
+                    <p class="bg-danger"> Rejected Records: {{fuvm.uploadResponse.not_inserted_rec}}</p>
+                    <p class="bg-primary" {{fuvm.uploadResponse.Status}}</p>
+                </div>
+
+                <!--<p>
+    post request with this data:
+</p>
+<pre ng-repeat="(key, value) in fileLog">
+    {{key}} {{ value }}
+  </pre>-->
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Feedback-->

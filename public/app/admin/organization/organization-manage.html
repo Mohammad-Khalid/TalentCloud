@@ -1,0 +1,48 @@
+
+            <!-- Features-->
+            <div class="myForm" ng-controller="manageOrganizationCtr as moc">
+                <div class="container">
+                    <!-- Features Row-->
+                    <div class="features row">
+						<h3>Manage Organization {{org.length}}</h3>
+						<div class="table-responsive">
+						<table class="table table-bordered table-striped table-hover"> 
+							<thead> 
+								<tr> 
+									<th>#</th>
+									<th>Full Name</th>
+									<th>Short Name</th>
+									<th>Org Code</th>
+									<th>Contact Numbers</th>
+									<th>Email Id</th>
+									<th>Action</th>
+								</tr>
+							</thead> 
+							<tbody>
+								<tr ng-repeat="org in moc.org"> 
+										<td>{{$index+1}}</td> 
+										<td>{{org.FULL_ONAME}}</td>
+										<td>{{org.ONAME}}</td> 
+										<td>{{org.ORG_CODE}}</td>
+										<td>{{org.PRIMARY_PHONE}}</td>
+										<td>{{org.email}}</td> 
+										<td>
+											<a href="#mangeOrganization?org_id={{org.ORGID}}&aid={{moc.org.aid}}" class="btn btn-default">
+												Manage
+											</a>
+											<a href="#editOrganization?org_id={{org.ORGID}}&aid={{moc.org.aid}}" class="btn btn-default">
+												Edit
+											</a>
+											<a href="" ng-click="moc.deleteOrganization(org.ORGID)" class="btn btn-default">
+												Delete
+											</a>
+										</td>
+								</tr>
+							</tbody> 
+						</table>	
+						</div>
+					</div>
+                </div>
+            </div>
+
+  

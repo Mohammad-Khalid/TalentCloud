@@ -1,0 +1,41 @@
+<script type="text/ng-template" id="alert.html">
+    <div ng-transclude></div>
+</script>
+
+
+
+<!-- Jumbotron-->
+<div class="jumbotron page-jumbotron no-bg">
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <h1><i class="fa fa-graduation-cap"></i>Admin Login</h1>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Details Section-->
+<div class="details-content" style="padding-bottom:100px;margin-top:30px" ng-controller="AdminLoginController as vm">
+
+    <!-- Feedback-->
+    <div class="row">
+        <!-- Contact-->
+        <div class="col-md-6 col-md-offset-3 contact-form-wrapper">
+            <!-- Contact Form-->
+            <form class="contact-form" ng-submit="vm.login()">
+
+
+                <div class="error" style="color:#910f0f;font-weight:bold;padding:8px 12px 8px 20px;margin-bottom:10px;background:rgba(255,0,0,0.1);border-radius:10px;" ng-show="vm.res.error">Error: {{vm.res.error}}</div>
+                <div class="field">
+                    <input type="text" name="username" ng-model="vm.user.username" placeholder="Username" />
+                </div>
+                <div class="field">
+                    <input type="password" name="password" ng-model="vm.user.password" placeholder="Password" />
+                </div>
+
+                <input type="submit" value="Login" class="submit" />
+            </form>
+        </div>
+    </div>
+</div>

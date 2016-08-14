@@ -1,0 +1,63 @@
+.contact-wrapper.index-1, .contact-wrapper.index-1 .contact-details{
+	padding-top:0px;
+}
+.register-btn a{
+	color:#000000;
+	padding:5px 10px;
+	border-radius:10px;
+}
+.jumbotron.page-jumbotron .bottom-bar{
+padding: 15px 0 25px;
+}
+.contact-wrapper.index-1 .contact-details .adress, .contact-wrapper.index-1 .contact-details .phone, .contact-wrapper.index-1 .contact-details .email{
+		padding-top:30px;
+}
+ .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.myForm{
+	padding:30px 0px 50px	
+}
+.form-seprator{
+	border-bottom:2px solid #FFA800;	
+	margin:5px 0px;
+}
+
+.form-seprator label{
+		margin-bottom:0px;
+		background:#FFA800;
+		padding:3px 5px;
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+		color:#FFFFFF;
+}
+.logout{
+	position:absolute;
+	top:0px;
+	right:60px;
+	background:#FFA800;
+	padding:5px;
+	text-decoration:none;
+	color:#fff;
+}
+.logout:hover{
+		background:#333333;	
+		color:#fff;
+}

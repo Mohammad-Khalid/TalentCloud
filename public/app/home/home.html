@@ -1,0 +1,111 @@
+<!-- Jumbotron-->
+<div ng-controller="HomeLoginController as vm">
+    <div class="jumbotron page-jumbotron no-bg">
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <h1><i class="fa fa-user"></i>Member Login</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features-->
+    <div class="contact-wrapper index-1" style="margin-bottom:50px">
+        <div class="container">
+            <!-- Section Name-->
+
+            <!-- Contact Inside-->
+            <div class="contact-details row">
+                <!-- Adress-->
+                <div class="col-md-4 col-sm-4 col-xs-12 adress">
+                    <div>
+                        <h2>Teacher</h2>
+                        <div class="icon color-1"><img src="img/icons/map-marker-1.png" alt="" /></div>
+                        <p>
+                            <!--<a href="#teacherRegisterModal" data-toggle="modal" data-target="#teacherRegisterModal" class="button button-simple min">Register</a>
+                                    <br/>
+                                    <br/>-->
+
+                            <a href="#signin" ng-click="open('Teacher')" class="button button-simple min">Login</a>
+                    </div>
+                </div>
+                <!-- Phone-->
+                <div class="col-md-4 col-sm-4 col-xs-12 phone">
+                    <div>
+                        <h2>Student</h2>
+                        <div class="icon color-2"><img src="img/icons/phone-1.png" alt="" /></div>
+                        <p>
+                            <!--<a href="#studentRegisterModal" data-toggle="modal" data-target="#studentRegisterModal" class="button button-simple min">Register</a>
+<br/>
+<br/>-->
+                            <a href="#signin" ng-click="open('Student')" class="button button-simple min">Login</a></p>
+                    </div>
+                </div>
+                <!-- Email-->
+                <div class="col-md-4 col-sm-4 col-xs-12 email">
+                    <div>
+                        <h2>Parent</h2>
+                        <div class="icon color-3"><img src="img/icons/paper-plane-1.png" alt="" /></div>
+                        <p>
+                            <!--<a href="#parentRegisterModal" data-toggle="modal" data-target="#parentRegisterModal" class="button button-simple min">Register</a>
+                                    <br/>
+                                    <br/>-->
+                            <a href="#signin" ng-click="open('Parent')" class="button button-simple min">Login</a></p>
+                    </div>
+                </div>
+
+            </div>
+            <!--Login Modal content-->
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="cancel()">&times;</button>
+                    <!-- <h4 class="modal-title">Login Here</h4> -->
+                    <div class="section-name index-1 form-header">
+                        <h3>Login {{items.loginName}}</h3>
+                        <div class="sep"></div>
+
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <!-- Contact Page-->
+                    <div class="row">
+                        <!-- Contact-->
+                        <div class="col-md-2 ">
+                        </div>
+                        <div class="col-md-8 contact-form-wrapper">
+                            <!-- Contact Form-->
+
+                            <form name="form" ng-submit="vm.login()" role="form">
+
+                                <div class="error" style="color:#910f0f;font-weight:bold;padding:8px 12px 8px 20px;margin-bottom:10px;background:rgba(255,0,0,0.1);border-radius:10px;" ng-show="vm.res.error">Error: {{vm.res.error}}</div>
+                                <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                                    <label for="username"> Username</label>
+                                    <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
+                                    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
+                                    <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error': form.code.$dirty && form.code.$error.required }">
+                                    <label for="code">School Code</label>
+                                    <input type="text" name="code" id="code" class="form-control" ng-model="vm.user.code" required />
+                                    <span ng-show="form.code.$dirty && form.code.$error.required" class="help-block">Code is required</span>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
+                                    <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-2 ">
+                        </div>
+                    </div>
+                </div>
+
+            </script>
+        </div>
+
+    </div>
+</div>

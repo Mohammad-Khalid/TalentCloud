@@ -1,0 +1,6 @@
+first_name,last_name,password,email,gender,mobile_number,user_type  
+Mohammad,Khalid,123456,mohdkhalid0807@gmail.com,1,8149250342,1
+Saquib,Ahmed,123456,saquib.ahmed@gmail.com,1,8149250342,1
+,Ahmed,123456,saquib.ahmed@gmail.com,1,8149250342,1
+Saquib,Ahmed,123456,,1,8149250342,1
+admin,user,123456,admin@gmail.com,1,9865327410,3

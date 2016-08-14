@@ -1,0 +1,50 @@
+
+            <!-- Features-->
+            <div class="myForm" ng-controller="manageTeacher as mtvm">
+                <div class="container">
+                    <!-- Features Row-->
+                    <div class="features row">
+						<h3>Manage Teachers</h3>
+						<div class="table-responsive">
+						<table class="table table-bordered table-striped table-hover"> 
+							<thead> 
+								<tr> 
+									<th>#</th>
+									<th>Images</th>
+									<th>Full Name</th>
+									<th>Employee Code</th>
+									<th>Qualifcation</th>
+									<th>Contact Numbers</th>
+									<th>Email Id</th>
+									<th>Action</th>
+								</tr>
+							</thead> 
+							<tbody> 
+								<tr ng-repeat="teach in mtvm.teach"> 
+										<td>{{$index+1}}</td> 
+										<td><img src="/uploads/{{teach.image_path}}" width="50" height="50" alt="Parents Images"></td>
+										<td>{{teach.first_name +" "+ teach.middle_name +" "+ teach.last_name}}</td>
+										<td>{{teach.employee_code}}</td> 
+										<td>{{teach.qualification}}</td>
+										<td>{{teach.phone_number}}</td>
+										<td>{{teach.work_email}}</td> 
+										<td>
+											<a href="#mangeOrganization" class="btn btn-default">
+												Manage
+											</a>
+											<a href="#editTeacher?account_id={{teach.ID}}" class="btn btn-default">
+												Edit
+											</a>
+											<a ng-click="deleteTeacher(teach.ID)" class="btn btn-default">
+												Delete
+											</a>
+										</td>
+								</tr>
+							</tbody> 
+						</table>	
+						</div>
+					</div>
+                </div>
+            </div>
+
+  

@@ -1,0 +1,78 @@
+<!-- Features-->
+<div class="myForm" ng-controller="editOrganizationCtr as eoc">
+    <div class="container">
+        <!-- Features Row-->
+        <div class="features row">
+            <h3>Edit Organization</h3>
+            <form>
+                <div class="form-group col-md-8">
+                    <label for="exampleInputName2">Full Name</label>
+                    <input type="hidden" ng-model="eoc.org.org_id">
+                    <input type="text" ng-model="eoc.org.full_oname" class="form-control" id="exampleInputName2" placeholder="Organization Name">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="exampleInputName2">Short Name</label>
+                    <input type="text" ng-model="eoc.org.oname" class="form-control" id="exampleInputName2" placeholder="Short Name">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="exampleInputName2">Code</label>
+                    <input type="text" ng-model="eoc.org.org_code" class="form-control" id="exampleInputName2" placeholder="Organization Code">
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="form-seprator">
+                    <label>Adress Information</label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="exampleInputName2">Address Line 1</label>
+                    <input type="text" ng-model="eoc.org.address.address_1" class="form-control" id="exampleInputName2" placeholder="Address Line 1">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="exampleInputName2">Address Line 2</label>
+                    <input type="text" ng-model="eoc.org.address.address_2" class="form-control" id="exampleInputName2" placeholder="Address Line 2">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">City </label>
+                    <input type="text" ng-model="eoc.org.address.address_city" class="form-control" id="exampleInputName2" placeholder="City">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Pincode</label>
+                    <input type="text" ng-model="eoc.org.address.address_zipcode" class="form-control" id="exampleInputName2" placeholder="Pincode">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">State</label>
+                    <input type="text" ng-model="eoc.org.address.address_state" class="form-control" id="exampleInputName2" placeholder="State">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Country</label>
+                    <input type="text" ng-model="eoc.org.address.address_country" class="form-control" id="exampleInputName2" placeholder="Country">
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-seprator">
+                    <label>Contect Information</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Contect Number 1</label>
+                    <input type="text" ng-model="eoc.org.primary_phone" class="form-control" id="exampleInputName2" placeholder="Contect Number 1">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Contect Number 2</label>
+                    <input type="text" ng-model="eoc.org.secondary_phone" class="form-control" id="exampleInputName2" placeholder="Contact Number 2">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputEmail2">Email ID</label>
+                    <input type="email" ng-model="eoc.org.email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="exampleInputName2">Comments</label>
+                    <textarea type="text" ng-model="eoc.org.comments" class="form-control" id="exampleInputName2" placeholder="Comments"></textarea>
+                </div>
+
+
+
+
+                <button type="submit" ng-click="eoc.updateOrganization(eco.org.org_id)" class="btn btn-default">Submit Form</button>
+            </form>
+        </div>
+    </div>
+</div>
